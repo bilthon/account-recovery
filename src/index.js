@@ -15,7 +15,7 @@ const ACCOUNT_LIMIT = 10e3
 const instance = axios.create({
   baseURL: 'https://blockstream.info/api'
 })
-const http = rateLimit(instance, { maxRPS: 1 })
+const http = rateLimit(instance, { maxRPS: 5 })
 
 const main = async () => {
   const seedWords = process.env.SEED_WORDS
