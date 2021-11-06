@@ -37,8 +37,7 @@ const main = async () => {
       try {
         const resp = await http.get(`/address/${address}/txs`)
         if (resp.data.length > 0) {
-          console.log('Account found! Index: ', i)
-          return
+          console.log(`m/84'/0'/${i}'/0/${j} -> ${address} - Has some transactions!`)
         } else {
           console.log(`m/84'/0'/${i}'/0/${j} -> ${address} - NOT`)
         }
