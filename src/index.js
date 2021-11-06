@@ -19,10 +19,8 @@ const http = rateLimit(instance, { maxRPS: 1 })
 
 const main = async () => {
   const seedWords = process.env.SEED_WORDS
-  console.log('seed words: ', seedWords)
   
   const seed = bip39.mnemonicToSeedSync(seedWords)
-  console.log('seed: ', seed.toString('hex'))
   
   const root = bip32.fromSeed(seed)
   
