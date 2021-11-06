@@ -9,7 +9,7 @@ Versions are just recommended. This might work with other versions as well.
 ## Installation
 Clone the repository
 ```bash
-git clone git@github.com:bilthon/account-recovery.git
+git clone https://github.com/bilthon/account-recovery.git
 ```
 Install dependencies
 ```bash
