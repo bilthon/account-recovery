@@ -11,7 +11,7 @@ const ACCOUNT_LIMIT = 10e3
 const main = async () => {
   const seedWords = process.env.SEED_WORDS
 
-  const targetAddress = process.env.TARGET_ADDRESS || process.argv[2]
+  const targetAddress = process.argv[2] || process.env.TARGET_ADDRESS 
   if (!targetAddress) {
     console.log('Missing target address, please specify one either by setting the TARGET_ADDRESS environment variable or passing it as a command line argument')
     return
@@ -24,7 +24,7 @@ const main = async () => {
   const coin = root.derivePath('m/84\'/0\'')
   
   const before = Date.now()
-  
+
   console.log('Scanning, please wait...')
   for(let i = 0; i < ACCOUNT_LIMIT; i++) {
     const account = coin.deriveHardened(i)
