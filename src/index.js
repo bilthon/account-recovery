@@ -42,7 +42,7 @@ const main = async () => {
           console.log('Account found! Index: ', i)
           return
         } else {
-          console.log(`m/84'/0'/${i}/0/${j} -> ${address} - NOT`)
+          console.log(`m/84'/0'/${i}'/0/${j} -> ${address} - NOT`)
         }
       } catch(err) {
         console.error(err)
