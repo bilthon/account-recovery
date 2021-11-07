@@ -28,9 +28,22 @@ const main = async () => {
   console.log('Scanning, please wait...')
   for(let i = 0; i < ACCOUNT_LIMIT; i++) {
     const account = coin.deriveHardened(i)
+    // Going over external addresses
     const external = account.derive(0)
     for (let j = 0; j < GAP; j++) {
       const index = external.derive(j)
+      const address = bitcoin.payments.p2wpkh({
+        pubkey: index.publicKey
+      }).address
+      if (address === targetAddress) {
+        console.log(`Found target address ${targetAddress}!`)
+        console.log(`Derivation path: m/84'/0'/${i}/0/${j}`)
+      }
+    }
+    // Going over change addresses
+    const change = account.derive(1)
+    for (let j = 0; j < GAP; j++) {
+      const index = change.derive(j)
       const address = bitcoin.payments.p2wpkh({
         pubkey: index.publicKey
       }).address
