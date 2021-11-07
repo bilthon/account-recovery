@@ -49,7 +49,7 @@ const main = async () => {
       }).address
       if (address === targetAddress) {
         console.log(`Found target address ${targetAddress}!`)
-        console.log(`Derivation path: m/84'/0'/${i}/0/${j}`)
+        console.log(`Derivation path: m/84'/0'/${i}/1/${j}`)
       }
     }
   }
